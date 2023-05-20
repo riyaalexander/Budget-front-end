@@ -6,27 +6,27 @@ import DeleteButton from "../components/Delete";
 
 const DetailTransac = () => {
   const [transaction, setTransaction] = useState({});
-  const { index } = useParams();
+  const { id } = useParams();
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BACKEND_API}/budget/${index}`)
+      .get(`https://localhost:5555/transactions/${id}`)
       .then((response) => {
         setTransaction(response.data);
       })
       .catch((error) => console.log(error));
-  }, [index]);
+  }, [id]);
 
   return (
     <div>
       {transaction ? (
         <>
-          <h1>{transaction.itemName}</h1>
+          <h1>{transaction.item_name}</h1>
           <p>Amount: {transaction.amount}</p>
           <p>Date: {transaction.date}</p>
           <p>From: {transaction.from}</p>
           <p>Category: {transaction.category}</p>
-          <Link to={`/budget/${index}/edit`}>
+          <Link to={`/budget/${id}/edit`}>
             <EditButton />
           </Link>
           <DeleteButton />

@@ -1,20 +1,21 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom";
+import React from 'react';
 
-const EditButton = () => {
-    const navigate = useNavigate()
+const Edit = () => {
+  const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        navigate('/budget/AllTransactions')
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/budget/edit');
+  };
 
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <button type="submit">Edit</button>
-            </form>
-        </div>
-    )
-}
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <button type="submit">Edit</button>
+      </form>
+    </div>
+  );
+};
 
-export default EditButton;
+export default Edit;

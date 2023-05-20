@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import React from "react";
 
 const Delete = () => {
   const { index } = useParams();
@@ -10,13 +11,13 @@ const Delete = () => {
 
     if (confirmDelete) {
       axios
-        .delete(`${process.env.REACT_APP_BACKEND_API}/budget/${index}`)
+        .delete(`$https://localhost:5555/budget/${index}`)
         .then(() => {
           
         })
         .catch((error) => console.log(error));
       
-      navigate("/budget/AllTransactions");
+      navigate("src/pages/AllTransactions");
     }
   };
 

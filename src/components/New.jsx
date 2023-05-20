@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const New = () => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -16,7 +16,7 @@ const New = () => {
         description: description,
         category: category,
       });
-      history.push(`/resources/${response.data.id}`);
+      navigate(`/resources/${response.data.id}`);
     } catch (error) {
       console.log(error);
     }

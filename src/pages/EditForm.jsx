@@ -18,7 +18,7 @@ const EditForm = () => {
 
   useEffect(() => {
     axios
-      .get(`${process.env.REACT_APP_BACKEND_API}/budget/${index}`)
+      .get(`${process.env.REACT_APP_BACKEND_API}/transactions/${index}`)
       .then((response) => {
         setEdit(response.data);
       })
@@ -33,7 +33,7 @@ const EditForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`${process.env.REACT_APP_BACKEND_API}/budget/${index}`, edit)
+      .put(`${process.env.REACT_APP_BACKEND_API}/transactions/${index}`, edit)
       .then((response) => {
         console.log(response.data);
       })

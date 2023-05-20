@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
-import List from './src/components/List';
-import Show from './src/components/Show';
-import New from './src/components/New';
-import Edit from 'src/components/Edit.jsx';
+import List from './components/List.jsx';
+import Show from './components/Show.jsx';
+import New from './components/New.jsx';
+import Edit from './components/Edit.jsx';
 
 function App() {
   return (
