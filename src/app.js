@@ -4,21 +4,16 @@ import List from './components/List.jsx';
 import Show from './components/Show.jsx';
 import New from './components/New.jsx';
 import Edit from './components/Edit.jsx';
+import '.styles.css';
+import ViewAll from './components/ViewAll.jsx';
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/resources/new">Create New</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="banner">
+        {}
+      </div>
 
         <Route exact path="/" component={List} />
         <Route exact path="/resources/:id" component={Show} />

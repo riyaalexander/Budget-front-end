@@ -6,6 +6,7 @@ import EditForm from './pages/EditForm';
 import DetailTransaction from './pages/DetailTransac';
 import BudgetForm from './pages/BudgetForm';
 import AllTransactions from './pages/AllTransactions';
+import './styles.css';
 
 ReactDOM.render(
   <Router>
